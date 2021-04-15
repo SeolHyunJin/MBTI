@@ -1,0 +1,2 @@
+# MBTI
+./index.html
