@@ -126,7 +126,7 @@ function retry(){
 Kakao.init("8236efc65b3fbe4b0f48aa82200898e6")
 function share(){
   Kakao.Link.sendDefault({
-    container: "#kakao-link-btn",
+    container: "share",
     objectType: 'feed',
 
     content: {
