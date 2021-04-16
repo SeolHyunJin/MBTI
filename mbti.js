@@ -124,9 +124,7 @@ function retry(){
 }
 
 function share(){
-  console.log("start")
-  //kakao.init("a8d74c802fd3ef2e828ea1bcaafa1e4d")
-  kakao.init("8236efc65b3fbe4b0f48aa82200898e6")
+  Kakao.init("8236efc65b3fbe4b0f48aa82200898e6")
   Kakao.Link.sendDefault({
     container: "#kakao-link-btn",
     objectType: 'feed',
@@ -137,8 +135,8 @@ function share(){
         imageUrl:
           'http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
         link: {
-          mobileWebUrl: wndow.lcation.href,
-          WebUrl: wndow.lcation.href
+          mobileWebUrl: window.location.href,
+          WebUrl: window.location.href
         },
     },
     social: {
@@ -150,7 +148,7 @@ function share(){
       {
         title: '웹으로 이동',
         link: {
-          WebUrl: wndow.lcation.href
+          WebUrl: window.location.href
         },
       },
   //  {
