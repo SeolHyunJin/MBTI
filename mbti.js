@@ -123,8 +123,8 @@ function retry(){
   next();
 }
 
+Kakao.init("8236efc65b3fbe4b0f48aa82200898e6")
 function share(){
-  Kakao.init("8236efc65b3fbe4b0f48aa82200898e6")
   Kakao.Link.sendDefault({
     container: "#kakao-link-btn",
     objectType: 'feed',
