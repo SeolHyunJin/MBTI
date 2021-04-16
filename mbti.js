@@ -160,12 +160,12 @@ function share(){
     container: '#kakao-link-btn',
     objectType: 'feed',
     content: {
-      title: document.title,
+      title: 'MBTI result',
       description: '당신의 성격 유형은?',
-      imageUrl: document.images[0].src,
+      imageUrl: 'http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
       link: {
-        webUrl: document.location.href,
-        mobileWebUrl: document.location.href
+        webUrl: window.location.href,
+        mobileWebUrl: window.location.href
       }
     },
     social: {
@@ -177,8 +177,8 @@ function share(){
       {
         title: 'Open!',
         link: {
-          mobileWebUrl: document.location.href,
-          webUrl: document.location.href
+          mobileWebUrl: window.location.href,
+          webUrl: window.location.href
         }
       }  
     ]
