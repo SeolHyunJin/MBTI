@@ -3,59 +3,59 @@ var i = 1;
 var testNum = {
   1:{
     'title':'문제 1번',
-    'description':'문제설명 문제설명 문제설명',
+    'description':'처음 회사에 입사했다! 들어가고 싶은 팀은 어떤 팀?',
     'type':'EI',
-    'A':'E',
-    'B':'I'
+    'A':'성과만 잘나오면 되는거 아냐? 좋은 성과 내는 팀',
+    'B':'사람이 최고지! 좋은 사람이 모인 팀'
   },
   2:{
     'title':'문제 2번',
-    'description':'문제설명 문제설명 문제설명',
+    'description':'떨리는 첫 출근, 무슨 옷을 입을까?',
     'type':'EI',
-    'A':'E',
-    'B':'I'
+    'A':'이미 전날 다 골라뒀지롱!',
+    'B':'오늘 Feel 가는대로!'
   },
   3:{
     'title':'문제 3번',
-    'description':'문제설명 문제설명 문제설명',
+    'description':'회사에서 첫 업무를 준다면 어떤 업무가 좋아?',
     'type':'EI',
-    'A':'E',
-    'B':'I'
+    'A':'가이드 라인이 명확한 업무',
+    'B':'내 생각을 자유롭게 펼칠 수 있는 업무'
   },
   4:{
-    'title':'문제 1번',
-    'description':'문제설명 문제설명 문제설명',
+    'title':'문제 4번',
+    'description':'일을 시작할 때 가장 먼저 하는 일',
     'type':'SN',
-    'A':'S',
-    'B':'N'
+    'A':'기한엄수가 중요하지! 스케줄링부터',
+    'B':'일단 자료조사하면서 감부터 잡자'
   },
   5:{
-    'title':'문제 1번',
-    'description':'문제설명 문제설명 문제설명',
+    'title':'문제 5번',
+    'description':'기다리던 점심시간인데 아무도 안일어난다? 내 선택은?',
     'type':'SN',
-    'A':'S',
-    'B':'N'
+    'A':'누가 물어보기 전까지 눈치보다며 가만히 쭈굴이처럼 있는다',
+    'B':'밥 안드시냐고 옆 사람에게 넌지듯이 물어본다'
   },
   6:{
-    'title':'문제 1번',
-    'description':'문제설명 문제설명 문제설명',
+    'title':'문제 6번',
+    'description':'내가 전혀 모르는 분야의 보고서를 받았다면?',
     'type':'SN',
-    'A':'S',
-    'B':'N'
+    'A':'꼼꼼하고 정확하게 읽어본다',
+    'B':'보고서 전체 의미를 파악해본다'
   },
   7:{
-    'title':'문제 1번',
-    'description':'문제설명 문제설명 문제설명',
+    'title':'문제 7번',
+    'description':'보고서를 봐도 모르겠다.. 선배는 무조건 외우라고 하는데, 내 속마음은?',
     'type':'TF',
-    'A':'T',
-    'B':'F'
+    'A':'하나도 이해안가는데 어떻게 외우지?',
+    'B':'일단 외우라고 하니 외워본다'
   },
   8:{
-    'title':'문제 1번',
-    'description':'문제설명 문제설명 문제설명',
+    'title':'문제 8번',
+    'description':'팀플로 진행하는 프로젝트가 잡혔다!',
     'type':'TF',
-    'A':'T',
-    'B':'F'
+    'A':'팀플? 너무 두럽다.. 잘 진행될 수 있을까?',
+    'B':'팀플! 좋아좋아'
   },
   9:{
     'title':'문제 1번',
@@ -123,7 +123,48 @@ function retry(){
   next();
 }
 
+function share(){
+  console.log("start")
+  //kakao.init("a8d74c802fd3ef2e828ea1bcaafa1e4d")
+  kakao.init("8236efc65b3fbe4b0f48aa82200898e6")
+  Kakao.Link.sendDefault({
+    container: "#kakao-link-btn",
+    objectType: 'feed',
+
+    content: {
+        title: 'MBTI',
+        description: '당신의 성격 유형은?',
+        imageUrl:
+          'http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
+        link: {
+          mobileWebUrl: wndow.lcation.href,
+          WebUrl: wndow.lcation.href
+        },
+    },
+    social: {
+      likeCount: 10,
+      commentCount: 20,
+      sharedCount: 30,
+    },
+    buttons: [
+      {
+        title: '웹으로 이동',
+        link: {
+          WebUrl: wndow.lcation.href
+        },
+      },
+  //  {
+  //    title: '앱으로 이동',
+  //    link: {
+  //     mobileWebUrl: 'https://developers.kakao.com',
+  //    },
+  //  },
+    ]
+  });
+}
+
 document.querySelector('#run-btn').addEventListener('click',run);
+document.querySelector('#share').addEventListener('click',share);
 document.querySelector('#retry').addEventListener('click',retry);
 
 document.querySelector('#A').addEventListener('click',function(){
