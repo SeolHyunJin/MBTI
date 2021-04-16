@@ -157,7 +157,6 @@ function share(){
 */
 function share(){
   Kakao.Link.createDefaultButton({
-    //container: '#kakao-link-btn',
     container: '#share',
     objectType: 'feed',
     content: {
