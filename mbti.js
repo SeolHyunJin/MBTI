@@ -124,9 +124,9 @@ function retry(){
 }
 
 Kakao.init("8236efc65b3fbe4b0f48aa82200898e6")
+/*
 function share(){
   Kakao.Link.sendDefault({
-    //container: "share",
     objectType: 'feed',
 
     content: {
@@ -151,12 +151,36 @@ function share(){
           WebUrl: window.location.href
         },
       },
-  //  {
-  //    title: '앱으로 이동',
-  //    link: {
-  //     mobileWebUrl: 'https://developers.kakao.com',
-  //    },
-  //  },
+    ]
+  });
+}
+*/
+function share(){
+  Kakao.Link.createDefaultButton({
+    container: '#kakao-link-btn',
+    objectType: 'feed',
+    content: {
+      title: document.title,
+      description: '당신의 성격 유형은?',
+      imageUrl: document.images[0].src,
+      link: {
+        webUrl: document.location.href,
+        mobileWebUrl: document.location.href
+      }
+    },
+    social: {
+      likeCount: 286,
+      commentCount: 45,
+      sharedCount: 845
+    },
+    buttons: [
+      {
+        title: 'Open!',
+        link: {
+          mobileWebUrl: document.location.href,
+          webUrl: document.location.href
+        }
+      }  
     ]
   });
 }
